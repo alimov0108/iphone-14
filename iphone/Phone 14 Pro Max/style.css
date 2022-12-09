@@ -1,0 +1,477 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: arial;
+  }
+  
+  body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #c2c3c9;
+  }
+  
+  .iphone{
+    border: 4px solid #3b444b;
+    border-radius: 50px;
+  }
+  
+  a{
+    text-decoration: none;
+    color: white;
+  }
+  
+  .iphone-14{
+    width: 300px;
+    height: 600px;
+    border: 5px solid black;
+    background: white;
+     background-image: url("img-bg.webp");
+    background-repeat: no-repeat;
+    background-size: 301px 600px;
+    border-radius: 47px;
+    position: relative;
+  }
+  
+  .operator-name{
+    position: absolute;
+    top: 16px;
+    left: 30px;
+    font-size: 14px;
+    color: white;
+  }
+  
+  .dynamic-island{
+    width: 100px;
+    height: 25px;
+    background: black;
+    border-radius: 50px;
+    margin: 0 auto;
+    margin-top: 10px;
+    position: absolute;
+    left: 100px;
+    z-index: 99999;
+    transition: all .5s;
+  }
+  
+  .dynamic-island-camera{
+    color: white;
+    position: absolute;
+    top: 18px;
+    right: 110px;
+    background: #121212;
+    box-shadow: 0 0 1px grey;
+    width: 10px;
+    height: 10px;
+    border-radius: 50px;
+    z-index: 99999;
+    transition: all .5s;
+  }
+  
+  .operator-icons{
+    position: absolute;
+    top: 16px;
+    right: 50px;
+    font-size: 14px;
+    transition: all .2s;
+    color: white;
+  }
+  
+  .battery{
+    width: 20px;
+    height: 10px;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    font-size: 10px;
+    text-align: center;
+    color: #000;
+    background: #Fefefe;
+    font-weight: bold;
+    position: absolute;
+    top: 0px;
+    right: -28px;
+  }
+  
+  .date-area{
+    margin-top: 60px;
+    width: 100%;
+    text-align: center;
+    color: white;
+  }
+  
+  .clock-area{
+    margin-top: 5px;
+    width: 100%;
+    text-align: center;
+    font-size: 60px;
+    font-family: 'Monoton', cursive;
+    color: white;
+  }
+  
+  .widget-area{
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+  }
+  
+  .widget{
+    margin: 0 5px;
+    padding: 5px;
+    border-radius: 10px;
+    transition: all 1s;
+    cursor: pointer;
+  }
+  
+  .widget i{
+    transition: all 1s;
+  }
+  
+  .widget:hover .spotify{
+    color: #1ED760;
+  }
+  
+  .quiet{
+    display: none;
+    color: gray;
+    transition: all 2s;
+    animation: bellNtf 2s;
+  }
+  
+  @keyframes bellNtf{
+    0%,40%,80%, 100%{color: gray;}
+    10%,60%, 90%{color: red;}
+  }
+  
+  .notification{
+    margin: 0 40px;
+    margin-top: 50px;
+    padding: 15px;
+    border-radius: 10px;
+    position: absolute;
+    visibility: hidden;
+    background-color: rgba(255, 255, 255, 0.250);
+    transition: all .5s;
+    animation: notification .5s forwards;
+    animation-delay: 10s;
+    color: white;
+  
+  }
+  
+  
+  @keyframes notification{
+    from{
+      bottom:180px;
+      opacity: 0;
+      visibility: hidden;
+    } to{
+      bottom: 100px;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  
+  .notification-text{
+    font-size: 15px;
+    color:#fff;
+  }
+  
+  .flash-and-camera img{
+    position: absolute;
+    bottom: 30px;
+    left: 20px;
+    filter: invert(100%);
+    padding: 10px;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.337);
+    transition: all .5s;
+    cursor: pointer;
+    z-index: 99999;
+  }
+  
+  .flash-and-camera img:hover{
+    background-color: rgba(255, 255, 255, 1);
+  }
+  
+  .flash-and-camera i{
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
+    color: black;
+    filter: invert(100%);
+    padding: 10px;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.337);
+    z-index: 99999;
+    cursor: pointer;
+    transition: all .5s;
+  }
+  
+  .flash-and-camera i:hover{
+    background-color: rgba(255, 255, 255, 1);
+  }
+  
+  .line{
+    position: absolute;
+    bottom: 10px;
+    width: 100px;
+    height: 5px;
+    border-radius: 50px;
+    background: #fff;
+    left: 100px;
+  }
+  
+  .bell-animation-area{
+    width: 100px;
+    height: 25px;
+    background: black;
+    border-radius: 47px;
+    position: absolute;
+    left: 100px;
+    top: 10px;
+    z-index: 99999;
+    display: none;
+    color: #fff;
+    animation: dynamicIslandAnm 7s;
+  }
+  
+  @keyframes dynamicIslandAnm {
+    0%, 100%{width: 100px; height: 25px; left: 100px; opacity: 0 !important;}
+    20%, 80%{width: 270px; height: 40px; left: 15px; display: block;}
+  }
+  
+  .bell-animation{
+    position: absolute;
+    width: 100%;
+    top: 15px;
+    visibility: hidden;
+    opacity: 0;
+    left: 0;
+    text-align: center;
+    z-index: 99999;
+    transition: all 1s;
+    animation: dynamicIslandText 5s;
+    animation-delay: .5s;
+    display: none;
+    color: #fff;
+  }
+  
+  @keyframes dynamicIslandText {
+    0%, 100%{top: 10px; visibility: hidden; opacity: 0}
+    20%, 80%{top: 22px; visibility: visible; opacity: 1}
+  }
+  
+  .bell-animation i{
+    color: red;
+  }
+  
+  
+  .bell-animation-area-slash{
+    width: 100px;
+    height: 25px;
+    background: #000;
+    border-radius: 47px;
+    position: absolute;
+    left: 100px;
+    top: 10px;
+    z-index: 99999;
+    display: none;
+    color: #fff;
+    animation: dynamicIslandAnm 7s;
+  }
+  
+  @keyframes dynamicIslandAnm {
+    0%, 100%{width: 100px; height: 25px; left: 100px; opacity: 0 !important;}
+    20%, 80%{width: 270px; height: 40px; left: 15px; display: block;}
+  }
+  
+  .bell-animation-slash{
+    position: absolute;
+    width: 100%;
+    top: 15px;
+    visibility: hidden;
+    opacity: 0;
+    left: 0;
+    text-align: center;
+    z-index: 99999;
+    transition: all 1s;
+    animation-delay: .5s;
+    display: none;
+    color: #fff;
+  }
+  
+  .bell-animation-slash i{
+    color: red;
+  }
+  
+  
+  
+  .c-gray{
+    color: gray;
+  }
+  
+  .bi-soundwave{
+    position: absolute;
+    top: 14px;
+    color: #fff;
+    left: 120px;
+    z-index: 99999;
+    animation: volumeUp 3s infinite;
+    display: none;
+    cursor: pointer;
+    transition: all .5s;
+  }
+  
+  @keyframes volumeUp {
+    0%, 50%, 100%{
+      color: #fff; opacity: 1;
+    }
+    20%, 40%, 60%, 80%{
+      color: #ffd0c7; opacity: .8;
+    }
+  }
+  
+  .music-player{
+    text-align: center;
+    margin-top: 0px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s;
+  }
+  
+  .music-poster{
+    width: 250px;
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transform: scale(.9);
+    transition: all .5s;
+    text-align: center;
+    margin: 0 auto;
+    margin-left: 5px;
+  }
+  
+  .bi-pause-fill{display: none;}
+  
+  .music-details{
+    width: 225px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.925);
+    backdrop-filter: blur(5px);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    color: #000;
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: 30px;
+    margin-top: 5px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  #sarki{
+    height: 15px;
+    width: 430px;
+    position: absolute;
+    left: -110px;
+    margin-top: 10px;
+  }
+  
+  .music-details::before{
+    content: "";
+    width: 15px;
+    height: 50px;
+    background: #efeff2;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    z-index: 999999;
+  }
+  
+  .music-details::after{
+    content: "";
+    width: 15px;
+    height: 50px;
+    background-color: #efeff2;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    z-index: 999999;
+  }
+  
+  .player{
+    margin-top: 30px;
+  }
+  
+  .player i{
+    font-size: 25px;
+    margin: 0 10px;
+  }
+  
+  .bi-cast{
+    position: absolute;
+    bottom: 15px;
+    right: 10px;
+    font-size: 15px !important;
+  }
+  
+  .player button{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .fuel-area{
+    position: absolute;
+    left: 0;
+    border-radius: 10px;
+    bottom: 100px;
+    width: 267px;
+    padding: 10px;
+    margin: 0 6px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s;
+    background-color: rgba(255, 255, 255, 0.750);
+    backdrop-filter: blur(5px);
+  }
+  
+  .fuel-area img{
+    width: 110px;
+    height: 101px;
+    border-radius: 10px;
+  }
+  
+  .fuel-ntf-app{
+    position: absolute;
+    top: 15px;
+    left: 130px;
+  }
+  
+  .bi-geo-alt-fill{
+    color: #fff;
+    position: absolute;
+    top: 11px;
+    right: 100px;
+    font-size: 12px;
+    padding: 5px;
+    background:#000;
+    border-radius: 50px;
+    z-index: 99999;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s;
+    animation: fuel 3s infinite;
+    text-align: center;
+  }
+  
+  @keyframes fuel {
+    0%, 50%, 100%{
+      color: #fff; opacity: 1;
+    }
+    20%, 40%, 60%, 80%{
+      color: red; opacity: .8;
+    }
+  }
